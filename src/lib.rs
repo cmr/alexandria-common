@@ -11,7 +11,7 @@ pub struct History {
     pub action: Action,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash)]
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
 pub enum Action {
     CheckOut,
     CheckIn,
@@ -36,7 +36,7 @@ pub struct Book {
     pub permission: Permission,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash)]
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
 pub enum Permission {
     DontLeaveLibrary,
     FreeToCheckOut,

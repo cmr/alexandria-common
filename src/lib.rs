@@ -46,3 +46,10 @@ pub enum Permission {
 pub fn enum_from_id<T: FromPrimitive>(id: i16) -> Option<T> {
     FromPrimitive::from_i16(id)
 }
+
+#[deriving(Encodable, Decodable, Show, Hash)]
+struct APIResult<T> {
+    success: bool,
+    data: T
+}
+

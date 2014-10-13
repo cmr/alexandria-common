@@ -50,6 +50,7 @@ pub fn enum_from_id<T: FromPrimitive>(id: i16) -> Option<T> {
 #[deriving(Encodable, Decodable, Show, Hash)]
 struct APIResult<T> {
     success: bool,
-    data: T
+    /// None if success = false
+    data: Option<T>
 }
 

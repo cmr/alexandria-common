@@ -22,7 +22,7 @@ pub struct User {
     pub name: String,
     pub email: String,
     pub student_id: String,
-    pub permission: Permission,
+    pub permission: Student_Permission,
 }
 
 #[deriving(Encodable, Decodable, Show)]
@@ -41,6 +41,12 @@ pub struct Book {
 pub enum Permission {
     DontLeaveLibrary,
     FreeToCheckOut,
+}
+
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
+pub enum Permission {
+    regular,
+    administrator,
 }
 
 /// Convert from an i16 (SMALLINT in the database) to an enum variant if it's valid

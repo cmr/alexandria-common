@@ -44,7 +44,7 @@ pub enum Permission {
 }
 
 #[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
-pub enum Permission {
+pub enum Student_Permission {
     regular,
     administrator,
 }

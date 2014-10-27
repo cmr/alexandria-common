@@ -3,7 +3,7 @@ extern crate serialize;
 
 use time::Timespec;
 
-#[deriving(Encodable, Decodable, Show)]
+#[deriving(Encodable, Decodable, Show, Clone)]
 pub struct History {
     pub isbn: String,
     pub student_id: String,
@@ -17,7 +17,7 @@ pub enum Action {
     CheckIn,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash)]
+#[deriving(Encodable, Decodable, Show, Hash, Clone)]
 pub struct User {
     pub name: String,
     pub email: String,
@@ -25,7 +25,7 @@ pub struct User {
     pub permission: Student_Permission,
 }
 
-#[deriving(Encodable, Decodable, Show)]
+#[deriving(Encodable, Decodable, Show, Clone)]
 pub struct Book {
     pub name: String,
     pub description: String,

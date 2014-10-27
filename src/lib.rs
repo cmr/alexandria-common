@@ -11,7 +11,7 @@ pub struct History {
     pub action: Action,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive, Clone)]
 pub enum Action {
     CheckOut,
     CheckIn,
@@ -37,13 +37,13 @@ pub struct Book {
     pub permission: Permission,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive, Clone)]
 pub enum Permission {
     DontLeaveLibrary,
     FreeToCheckOut,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive, Clone)]
 pub enum Student_Permission {
     regular,
     administrator,

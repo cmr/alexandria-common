@@ -17,7 +17,7 @@ pub enum Action {
     CheckIn,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash)]
+#[deriving(Encodable, Decodable, Show, Hash, Clone)]
 pub struct ActionRequest {
     pub action: Action,
     pub isbn: String,

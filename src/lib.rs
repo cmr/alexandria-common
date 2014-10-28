@@ -18,6 +18,13 @@ pub enum Action {
 }
 
 #[deriving(Encodable, Decodable, Show, Hash)]
+pub struct ActionRequest {
+    pub action: Action,
+    pub isbn: String,
+    pub student_id: String
+}
+
+#[deriving(Encodable, Decodable, Show, Hash)]
 pub struct User {
     pub name: String,
     pub email: String,

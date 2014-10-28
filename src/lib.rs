@@ -3,7 +3,7 @@ extern crate serialize;
 
 use time::Timespec;
 
-#[deriving(Encodable, Decodable, Show)]
+#[deriving(Encodable, Decodable, Show, Clone)]
 pub struct History {
     pub isbn: String,
     pub student_id: String,
@@ -11,7 +11,7 @@ pub struct History {
     pub action: Action,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive, Clone)]
 pub enum Action {
     CheckOut,
     CheckIn,
@@ -24,14 +24,15 @@ pub struct ActionRequest {
     pub student_id: String
 }
 
-#[deriving(Encodable, Decodable, Show, Hash)]
+#[deriving(Encodable, Decodable, Show, Hash, Clone)]
 pub struct User {
     pub name: String,
     pub email: String,
     pub student_id: String,
+    pub permission: Student_Permission,
 }
 
-#[deriving(Encodable, Decodable, Show)]
+#[deriving(Encodable, Decodable, Show, Clone)]
 pub struct Book {
     pub name: String,
     pub description: String,
@@ -43,10 +44,16 @@ pub struct Book {
     pub permission: Permission,
 }
 
-#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive)]
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive, Clone)]
 pub enum Permission {
     DontLeaveLibrary,
     FreeToCheckOut,
+}
+
+#[deriving(Encodable, Decodable, Show, Hash, FromPrimitive, Clone)]
+pub enum Student_Permission {
+    regular,
+    administrator,
 }
 
 /// Convert from an i16 (SMALLINT in the database) to an enum variant if it's valid

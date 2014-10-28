@@ -37,7 +37,8 @@ pub struct Book {
     pub name: String,
     pub description: String,
     pub isbn: String,
-    pub cover_image: Vec<u8>,
+    /// URL to a cover image
+    pub cover_image: String,
     pub available: i16,
     pub quantity: i16,
     pub active_date: Timespec,

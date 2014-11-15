@@ -29,7 +29,7 @@ pub struct User {
     pub name: String,
     pub email: String,
     pub student_id: String,
-    pub permission: Student_Permission,
+    pub permission: StudentPermission,
 }
 
 #[deriving(Encodable, Decodable, Show, Clone)]
@@ -52,9 +52,9 @@ pub enum Permission {
 }
 
 #[deriving(Encodable, Decodable, Show, Hash, FromPrimitive, Clone)]
-pub enum Student_Permission {
-    regular,
-    administrator,
+pub enum StudentPermission {
+    Regular,
+    Administrator,
 }
 
 /// Convert from an i16 (SMALLINT in the database) to an enum variant if it's valid

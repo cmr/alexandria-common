@@ -7,6 +7,7 @@ use time::Timespec;
 pub struct History {
     pub isbn: String,
     pub student_id: String,
+    pub book: i16,
     pub date: Timespec,
     pub action: Action,
 }

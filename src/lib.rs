@@ -33,7 +33,7 @@ pub struct User {
     pub email: String,
     pub student_id: String,
     pub permission: StudentPermission,
-    pub password: String,
+    pub password: String
 }
 
 #[deriving(Encodable, Decodable, Show, Clone)]
